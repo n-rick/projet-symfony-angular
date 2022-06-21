@@ -1,0 +1,20 @@
+<div class="container mb-3">
+    <div class="card p-2 mx-5">
+        <h2>Modifier une personne</h2>
+        <form #monForm="ngForm" (ngSubmit)="modifierPersonne()">
+            <div class="mb-3 mt-3">
+                <label for="nom" class="form-label">Nom:</label>
+                <input type="text" class="form-control" id="nom" placeholder="Enter nom" name="nom"
+                    [(ngModel)]="personne.nom">
+            </div>
+            <div class="mb-3">
+                <label for="prenom" class="form-label">Pr&eacute;nom:</label>
+                <input type="text" class="form-control" id="prenom" placeholder="Enter prénom" name="prenom"
+                    [(ngModel)]="personne.prenom">
+            </div>
+            <button type="submit" class="btn btn-info" [disabled]="!monForm.valid"><i class="fa-solid fa-floppy-disk"></i></button>
+        </form>
+    </div>
+</div>
+
+<a [routerLink]="['/personne']"><button class="btn btn-primary">Retour</button></a>

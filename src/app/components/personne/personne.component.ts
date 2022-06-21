@@ -27,16 +27,16 @@ export class PersonneComponent implements OnInit {
     })
   }
 
-  initPersonne() {
-    this.ps.getAllPersonnes().subscribe(res => {
-      this.personnes = res;
-    })
-  }
-
   supprimerPersonne(id: any)
   {
     this.ps.removePersonne(id).subscribe(res => {
       this.initPersonne();
+    })
+  }
+
+  initPersonne() {
+    this.ps.getAllPersonnes().subscribe(res => {
+      this.personnes = res;
     })
   }
 
