@@ -18,6 +18,7 @@ export class PersonneComponent implements OnInit {
     this.initPersonne();
 
   }
+
   ajouterPersonne()
   {
     this.ps.addPersonne(this.personne).subscribe(res => {
@@ -25,9 +26,17 @@ export class PersonneComponent implements OnInit {
       this.personne = {};
     })
   }
+
   initPersonne() {
     this.ps.getAllPersonnes().subscribe(res => {
       this.personnes = res;
+    })
+  }
+
+  supprimerPersonne(id: any)
+  {
+    this.ps.removePersonne(id).subscribe(res => {
+      this.initPersonne();
     })
   }
 
