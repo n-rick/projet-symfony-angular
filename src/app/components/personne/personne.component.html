@@ -1,1 +1,16 @@
-<p>personne works!</p>
+<h2>Ajouter une nouvelle personne</h2>
+<form>
+
+</form>
+<h2 class="card text-center mx-5 p-2 bg-light">Liste de personnes</h2>
+
+<div class="row">
+    <div class="col mx-5">
+        <ul class="list-group">
+            <li *ngFor="let elt of personnes" class="list-group-item">
+                {{elt.prenom}} {{ elt.nom }}
+            </li>
+        </ul>
+
+    </div>
+</div>
