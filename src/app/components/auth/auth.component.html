@@ -1,0 +1,18 @@
+<div class="container mb-3">
+    <div class="card p-2 mx-5">
+        <h2>Connexion</h2>
+        <form #monFormLogin="ngForm" (ngSubmit)="connexion()">
+            <div class="mb-3 mt-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"
+                    [(ngModel)]="user.email"><span *ngif="error">{{error}}</span>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter password" name="password"
+                    [(ngModel)]="user.password">
+            </div>
+            <button type="submit" class="btn btn-success" [disabled]="!monFormLogin.valid">Ajouter</button>
+        </form>
+    </div>
+</div>
